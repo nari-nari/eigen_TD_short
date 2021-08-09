@@ -1,0 +1,52 @@
+\documentclass[titlepage,a4paper,12pt,oneside,dvipdfmx]{jsbook}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{plext}
+\usepackage{color} 
+\usepackage{here}
+%\usepackage{slashbox}
+\usepackage{comment}
+
+%\usepackage{emathUtf}
+%\usepackage{subfigure}
+%\usepackage[subrefformat=parens]{subcaption}
+\newtheorem{theorem}{定理}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table }
+\newcommand{\dsp}{\displaystyle}
+\setlength{\textheight}{20cm}
+\setlength{\textwidth}{13.5cm}
+%\setlength{\textheight}{22cm}
+%\setlength{\textwidth}{15cm}
+
+\setlength{\marginparwidth}{1.5cm}
+
+
+	\setlength{\topmargin}{40pt}
+	\iftombow
+ 	\addtolentgh{\topmargin}{-1in}
+	\else
+ 	\addtolength{\topmargin}{-1truein}
+	\fi
+
+\setlength{\oddsidemargin}{0.0cm}
+\setlength{\evensidemargin}{0.0cm}
+
+\begin{document}
+
+\include{DefTD_DefTD}
+
+\include{Formulation_Gov}
+
+\include{SD_short}
+
+\include{Asymp_short}
+
+\include{TD_short}
+
+\end{document}
+

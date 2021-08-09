@@ -1,0 +1,42 @@
+\chapter{弾性体の固有振動問題}
+
+\section{固有振動問題の支配方程式}
+最大$n$個の材料を用いる場合を考える．
+$p$番目$(1\leq p\leq n)$の材料が占める領域を$\Omega_{p}$，
+$p$番目の材料と$q$番目の材料の境界を$\Gamma_{pq}$とする．
+固有値$\lambda$とそれに対応する固有振動モード$\bm{u}$は以下の支配方程式に従う．
+\begin{align}
+	&C_{ijkl}^{p}u_{k,lj}^{}+\lambda\rho^{p} u_{i}=0&\text{in}\hspace{0.3cm}\Omega_{p}
+	\label{eq:govmain}
+	\\
+	&u_{i}=0 &\text{on}\hspace{0.3cm}\Gamma_{D}
+	\\
+	&C_{ijkl}u_{k,l}^{}n_{j}=0 &\text{on}\hspace{0.3cm}\Gamma_{N}
+	\\
+	&u_{i}^{p}=u_{i}^{p} &\text{on}\hspace{0.3cm}\Gamma_{pq}
+	\\
+	&C_{ijkl}^{p}u_{k,l}^{p}n_{j}^{p}+C_{ijkl}^{q}u_{k,l}^{q}n_{j}^{q}=0 &\text{on}\hspace{0.3cm}\Gamma_{pq}
+	\label{eq:govbc}
+	\\
+	&\sum_{p=1}^{n}\int_{\Omega_p}(\rho^{p}u_{i}u_{i}) d\Omega=1
+	\label{eq:govnorm}
+\end{align}
+ただし，$C_{ijkl}$は弾性テンソル，$\rho$は質量密度を表す．
+
+\section{固有振動数最大化問題の目的関数}
+
+1番目から$\alpha$番目までの固有振動数の最大化を目的とする場合，目的関数は以下のように，$\alpha$番目までの固有値の調和平均の形で定義される．
+\begin{align}
+\min_{\Omega_{p}\{1\leq p\leq n\}}F=-\Bigr(\sum_{\beta=1}^{\alpha}\frac{1}{\lambda_{\beta}}\Bigl)^{-1}
+\end{align}
+ただし，$\lambda_{\beta}$は$\beta$番目の固有値を表す．$\alpha$個の固有値の内，小さいものから順に目的関数への影響が大きいため，この目的関数を最小化することで小さい固有値から優先的に最大化される．
+
+この目的関数のトポロジー導関数は連鎖率から以下のように表される．
+\begin{align}
+D_{T}F	=&\sum_{\beta=1}^{\alpha}\frac{\partial F}{\partial \lambda_{\beta}}D_{T}\lambda_{\beta}
+		\nonumber
+		\\
+		=&-\Bigr(\sum_{\beta=1}^{\alpha}\frac{1}{\lambda_{\beta}}\Bigl)^{-2}
+		\Bigr(\sum_{\beta=1}^{\alpha}\frac{D_{T}\lambda_{\beta}}{\lambda_{\beta}^2}\Bigl)
+\end{align}
+ゆえに，固有値$\lambda$のトポロジー導関数を導出することで，目的関数のトポロジー導関数が得られる．
